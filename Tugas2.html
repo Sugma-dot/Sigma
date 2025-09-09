@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Registrasi</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background : linear-gradient(to right, red , blue, black);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      background: white;
+      padding: 25px 30px;
+      border-radius: 12px;
+      width: 350px;
+      box-shadow: 0px 8px 25px rgba(0,0,0,0.2);
+    }
+    h2 {
+      text-align: center;
+      color: #5a4fcf;
+      margin-bottom: 20px;
+    }
+    .section {
+      margin-bottom: 20px;
+    }
+    .section h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #444;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 5px;
+    }
+    label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 5px;
+      color: #333;
+    }
+    input[type="text"], input[type="password"], textarea, select {
+      width: 100%;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      outline: none;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+    textarea {
+      resize: none;
+      height: 80px;
+    }
+    .radio-group, .checkbox-group {
+      margin-bottom: 12px;
+    }
+    .radio-group label, .checkbox-group label {
+      display: inline-block;
+      margin-right: 10px;
+      font-size: 14px;
+    }
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+    button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 20px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .btn-daftar {
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
+    }
+    .btn-reset {
+      background: #eee;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Registrasi</h2>
+
+    <!-- Bagian Akun -->
+    <div class="section">
+      <h3>Akun</h3>
+      <label>Username</label>
+      <input type="text" placeholder="Masukkan Username">
+
+      <label>Password</label>
+      <input type="password" placeholder="Minimal 8 karakter">
+
+      <label>Konfirmasi Password</label>
+      <input type="password" placeholder="Konfirmasi Password">
+    </div>
+
+    <!-- Bagian Data -->
+    <div class="section">
+      <h3>Data</h3>
+      <label>Nama</label>
+      <input type="text" placeholder="Masukkan Nama">
+
+      <label>Deskripsi Diri <br><small>Minimal 100 kata</small></label>
+      <textarea placeholder="Ceritakan tentang diri Anda..."></textarea>
+
+      <label>Jenis Kelamin</label>
+      <div class="radio-group">
+        <label><input type="radio" name="gender"> Pria</label>
+        <label><input type="radio" name="gender"> Perempuan</label>
+      </div>
+
+      <label>Informasi Yang Disukai</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox"> Olahraga</label>
+        <label><input type="checkbox"> Travelling</label>
+        <label><input type="checkbox"> Kesehatan</label>
+      </div>
+
+      <label>Prodi Jurusan</label>
+      <select>
+        <option>-- Pilih Prodi --</option>
+        <option>Kedokteran</option>
+        <option>Teknlogi Informasi</option>
+        <option>Ilmu Komputer</option>
+        <option>Farmasi</option>
+        <option>Teknik Elektro</option>
+      </select>
+    </div>
+
+    <!-- Tombol -->
+    <div class="buttons">
+      <button class="btn-daftar">DAFTAR</button>
+      <button type="reset" class="btn-reset">RESET</button>
+    </div>
+  </div>
+</body>
+</html>
