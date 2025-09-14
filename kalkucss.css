@@ -1,0 +1,6 @@
+@media (max-width: 600px) {
+  input, button {
+    font-size: 1.3rem;
+    padding: 1rem;
+  }
+}
