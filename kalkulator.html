@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <title>Kalkulator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background:#f6f8fa;
+      margin:40px;
+    }
+    .box {
+      background:#fffdfd;
+      padding:20px;
+      border-radius:8px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+      max-width:420px;
+    }
+    label {
+      display:block;
+      margin:10px 0 5px;
+      align-items: center;
+    }
+    input, select {
+      padding:8px;
+      width:100%;
+      box-sizing:border-box;
+      margin-bottom:15px;
+    }
+    button {
+      background:#2b6b57;
+      color:#fff;
+      border:none;
+      padding:10px 18px;
+      border-radius:6px;
+      cursor:pointer;
+    }
+    button:hover {
+      background:#38816d;
+    }
+    .hasil {
+      margin-top:15px;
+      padding:12px;
+      background:#e8f3ef;
+      border-radius:6px;
+      font-weight:bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Kalkulator Perhitungan</h2>
+    
+    <label for="bil1">Input Bilangan 1</label>
+    <input type="number" id="bil1" value="50">
+
+    <label for="bil2">Input Bilangan 2</label>
+    <input type="number" id="bil2" value="30">
+
+    <div class="ops">
+      <button onclick="hitung('add')">+</button>
+      <button onclick="hitung('sub')">−</button>
+      <button onclick="hitung('mul')">×</button>
+      <button onclick="hitung('div')">÷</button>
+    </div>
+
+    <div id="hasil" class="hasil">Hasil: —</div>
+  </div>
+
+  <script>
+    function hitung(op){
+      const a = parseFloat(document.getElementById("bil1").value);
+      const b = parseFloat(document.getElementById("bil2").value);
+      let res;
+
+      if (isNaN(a) || isNaN(b)){
+        document.getElementById("hasil").textContent = "Masukkan angka yang valid!";
+        return;
+      }
+
+      switch(op){
+        case "add": res = a + b; break;
+        case "sub": res = a - b; break;
+        case "mul": res = a * b; break;
+        case "div": res = (b === 0) ? "∞ (tak terdefinisi)" : a / b; break;
+      }
+
+      document.getElementById("hasil").textContent = "Hasil: " + res;
+    }
+  </script>
+</body>
+</html>
